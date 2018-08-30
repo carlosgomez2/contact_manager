@@ -4,7 +4,10 @@
     <h3><%= link_to "Contact Rails", root_path, class: "nav-link" %></h3>
       <ul class="navbar-nav ml-md-auto">
         <li>
-          <%= link_to "Add New Contact", root_path, class: "btn btn-default nav-add-contact" %>
+          <%= link_to new_contact_path, class: "btn btn-secondary" do %>
+            <i class="glyphicon glyphicon-plus"></i>
+            Add Contact
+          <% end %>
         </li>
       </ul>
       </div>

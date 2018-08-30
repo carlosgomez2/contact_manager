@@ -1,0 +1,97 @@
+<div class="card bg-default card-custom border-white border-0 contact-card-container">
+  <form action="/contacts/create" method="post" role="form">
+    <h5 class="card-header">
+      Add Contact
+    </h5>
+    
+    <div class="card-body">
+      <div class="card-text">
+        <div class="row">
+          <div class="col-md-8">
+
+              <div class="form-group">
+                <label>
+                  Name
+                </label>
+                <input type="text" name="contact[name]" class="form-control" />
+              </div>
+
+              <div class="form-group">
+                <label>
+                  Company
+                </label>
+                <input type="text" name="contact[company]" class="form-control" />
+              </div>
+
+              <div class="form-group">
+                <label>
+                  Email
+                </label>
+                <input type="email" name="contact[email]" class="form-control" />
+              </div>
+
+              <div class="form-group">
+                <label>
+                  Phone
+                </label>
+                <input type="text" name="contact[phone]" class="form-control" />
+              </div>
+
+              <div class="form-group">
+                <label>
+                  Address
+                </label>
+                <textarea type="text" name="contact[address]" id="address" rows="3" class="form-control"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label>Group</label>
+                <select name="contact[group]" id="group" class="form-control">
+                  <option value="">Select group</option>
+                    <% Group.all.each do |group| %>
+                      <option value="<%= group.id %>"><%= group.name.capitalize %></option>
+                    <% end %>
+                </select>
+                <br>
+
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <a href="#" class="input-group-text btn btn-success">
+                        <i class="glyphicon glyphicon-ok"></i>
+                      </a>
+                    </div>
+                    <input type="text" name="new_group" id="new_group" class="form-control" placeholder="My new group">
+                  </div>
+
+                <br>
+                <a href="#" id="add-group-btn" class="btn btn-outline-primary btn-block">Add New Group</a>
+              </div>
+
+          </div>
+          <div class="col-md-4">
+            <img src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
+            <br>
+            
+            <div class="text-center">
+              <span class="btn btn-secondary btn-file"><span class="fileinput-new">Choose Photo</span><span class="fileinput-exists">Change</span><input
+                  type="hidden"><input type="file" name="..."></span>
+              <a href="#" class="btn btn-secondary fileinput-exists" data-dismiss="fileinput">Remove</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <button type="submit" class="btn btn-primary">
+        Save
+      </button>
+      <button type="submit" class="btn btn-outline-primary">
+        Cancel
+      </button>
+    </div>
+
+  </form>
+</div>
+
