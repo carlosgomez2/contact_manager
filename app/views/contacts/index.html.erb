@@ -1,22 +1,19 @@
-<% @contacts.each do |contact| %>
-  <div class="card card-custom bg-white border-white border-0 contact-card-container">
-    <div class="row no-gutters contact-elements">
-        <div class="col-auto">
-          <img src="http://placehold.it/200" class="img-fluid" alt="...">
-        </div>
-        <div class="col contact-description">
-          <div class="card-block px-2">
-            <h4 class="card-title"><%= contact.name %></h4>
-            <p class="card-text">
-              <strong><%= contact.company %></strong><br>
-              <%= contact.email %>
-            </p>
-          </div>
-        </div>
-        <div class="col contact-actions">
-          <%= link_to '', root_path, class: "text-secondary glyphicon glyphicon-pencil contact-action-icon" %>
-          <%= link_to '', root_path, class: "text-danger glyphicon glyphicon-trash contact-action-icon" %>
-        </div>
-      </div>
-    </div>
-  <% end %>
+<%= render @contacts %>
+
+<br>
+
+<div class="text-center">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination pagination-lg justify-content-center">
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1">Previous</a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+      </li>
+    </ul>
+  </nav>
+</div>

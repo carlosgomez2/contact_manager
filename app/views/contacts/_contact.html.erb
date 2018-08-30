@@ -1,0 +1,22 @@
+<div class="card card-custom bg-white border-white border-0 contact-card-container">
+  <div class="row no-gutters contact-elements">
+    <div class="col-auto">
+      <img src="http://placehold.it/200" class="img-fluid" alt="...">
+    </div>
+    <div class="col contact-description">
+      <div class="card-block px-2">
+        <h4 class="card-title">
+          <%= contact.name %>
+        </h4>
+        <p class="card-text">
+          <strong><%= contact.company %></strong><br>
+          <%= contact.email %>
+        </p>
+      </div>
+    </div>
+    <div class="col contact-actions">
+      <%= link_to '', root_path, class: "text-secondary glyphicon glyphicon-pencil contact-action-icon" %>
+        <%= link_to '', root_path, class: "text-danger glyphicon glyphicon-trash contact-action-icon" %>
+    </div>
+  </div>
+</div>
