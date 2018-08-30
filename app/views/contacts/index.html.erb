@@ -1,23 +1,22 @@
-<div class="card">
-  <div class="row no-gutters contact-elements">
-    <div class="col-auto">
-      <img src="http://placehold.it/200" class="img-fluid" alt="...">
-    </div>
-    <div class="col contact-description">
-      <div class="card-block px-2">
-        <h4 class="card-title">Contact Name</h4>
-        <p class="card-text">Address</p>
+<% @contacts.each do |contact| %>
+  <div class="card card-custom contact-card-container">
+    <div class="row no-gutters contact-elements">
+        <div class="col-auto">
+          <img src="http://placehold.it/200" class="img-fluid" alt="...">
+        </div>
+        <div class="col contact-description">
+          <div class="card-block px-2">
+            <h4 class="card-title"><%= contact.name %></h4>
+            <p class="card-text">
+              <strong><%= contact.company %></strong><br>
+              <%= contact.email %>
+            </p>
+          </div>
+        </div>
+        <div class="col contact-actions">
+          <%= link_to '', root_path, class: "text-secondary glyphicon glyphicon-pencil contact-action-icon" %>
+          <%= link_to '', root_path, class: "text-danger glyphicon glyphicon-trash contact-action-icon" %>
+        </div>
       </div>
     </div>
-    <div class="col contact-actions">
-      <div class="contact-btns">
-        <a href="#" class="btn btn-outline-secondary btn-sm" title="Edit">
-          e
-        </a>
-        <a href="#" class="btn btn-outline-danger btn-sm" title="Edit">
-          r
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+  <% end %>

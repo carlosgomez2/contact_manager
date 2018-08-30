@@ -28,3 +28,4 @@ end
 
 gem 'faker', '~> 1.9', '>= 1.9.1'
 gem 'bootstrap', '~> 4.1.3'
+gem 'glyphicons'
