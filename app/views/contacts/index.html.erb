@@ -1,3 +1,9 @@
+<% if @contacts.blank? %>
+  <div class="alert alert-warning">
+    <strong>Contact not found!</strong> Add some contacts please.
+  </div>
+<% end %>
+
 <%= render @contacts %>
 
 <br>
