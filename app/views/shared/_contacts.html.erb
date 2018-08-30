@@ -1,20 +1,13 @@
-<br>
-<br>
-<br>
-
 <!-- content -->
-<div class="container">
+<div class="container container-contacts">
   <div class="row">
     <div class="col-md-3">
-      <div class="card">
+      <div class="card badges">
         <div class="list-group list-group-flush">
-          <a href="#" class="list-group-item">All Contact <span class="badge">10</span></a>
-          <a href="" class="list-group-item">Family <span class="badge">4</span></a>
-          <a href="" class="list-group-item">Friends <span class="badge">3</span></a>
-          <a href="" class="list-group-item">Other <span class="badge">3</span></a>
+          <%= render "shared/badges" %>
         </div>
       </div>
-    </div><!-- /.col-md-3 -->
+    </div>
 
     <div class="col-md-9">
       <%= yield %>
