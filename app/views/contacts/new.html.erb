@@ -6,6 +6,20 @@
     </h5>
     
     <div class="card-body">
+
+      <% if @contact.errors.any? %>
+        <div class="alert alert-danger">
+          <h4>Please correct this followind errors:</h4>
+          <ul>
+            <% @contact.errors.full_messages.each do |error| %>
+              <li>
+                <%= error %>
+              </li>
+              <% end %>
+          </ul>
+        </div>
+      <% end %>
+
       <div class="card-text">
         <div class="row">
           <div class="col-md-8">

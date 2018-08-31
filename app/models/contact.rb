@@ -1,6 +1,9 @@
 class Contact < ApplicationRecord
   belongs_to :group
 
+  validates :name, :email, :group_id, presence: true
+  validates :name, length: { minimum: 2 }
+
   def gravatar
     size = "?s=200"
     default = "?d=robohash"
