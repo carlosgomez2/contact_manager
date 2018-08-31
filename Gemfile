@@ -32,4 +32,5 @@ gem 'glyphicons'
 gem 'kaminari'
 gem 'carrierwave', '~> 1.0'
 gem 'carrierwave-imagesorcery'
-gem "mini_magick"
+gem 'mini_magick'
+gem 'jasny-bootstrap-rails'

@@ -62,15 +62,15 @@
 
             </div>
             <div class="col-md-4">
-              <img src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
-              <br>
+              <div class="contact-avatar-container fileinput fileinput-new" data-provides="fileinput">
+                <%= image_tag @contact.avatar.present? ? @contact.avatar.url(:avatar) : @contact.gravatar, class: "img-fluid gravatar-img contact-avatar card-custom", data: { trigger: "fileinput" } %>
+                <br>
 
-              <div class="text-center">
-                <span class="btn btn-secondary btn-file"><span class="fileinput-new">Choose Photo</span><span class="fileinput-exists">Change</span><input
-                    type="hidden"><%= f.file_field :avatar %></span>
-                <a href="#" class="btn btn-secondary fileinput-exists" data-dismiss="fileinput">Remove</a>
+                <div class="text-center">
+                  <span class="btn btn-secondary btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><%= f.file_field :avatar %></span>
+                  <a href="#" class="btn btn-secondary fileinput-exists" data-dismiss="fileinput">Remove</a>
+                </div>
               </div>
-
             </div>
           </div>
         </div>

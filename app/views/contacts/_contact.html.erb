@@ -15,8 +15,8 @@
       </div>
     </div>
     <div class="col contact-actions">
-      <%= link_to '', edit_contact_path(contact), class: "text-secondary glyphicon glyphicon-pencil contact-action-icon" %>
-        <%= link_to '', root_path, class: "text-danger glyphicon glyphicon-trash contact-action-icon" %>
+      <%= link_to '', edit_contact_path(contact), class: "text-secondary glyphicon glyphicon-pencil contact-action-icon", title: "Edit" %>
+      <%= link_to '', destroy_contact_path(contact), method: :delete, class: "text-danger glyphicon glyphicon-trash contact-action-icon", title: "Delete", data: { confirm: "Are you sure?" } %>
     </div>
   </div>
 </div>

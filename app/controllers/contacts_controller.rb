@@ -28,11 +28,17 @@ class ContactsController < ApplicationController
   def update
     @contact = Contact.find(params[:id])
     if @contact.update(contact_params)
-      flash[:success] = "New Contact has been added successfully!"
+      flash[:success] = 'New Contact has been added successfully!'
       redirect_to contacts_path
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    Contact.find(params[:id]).destroy
+    flash[:success] = 'Contact has been deleted successfully!'
+    redirect_to contacts_path
   end
 
   private
