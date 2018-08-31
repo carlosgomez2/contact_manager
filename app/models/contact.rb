@@ -1,4 +1,5 @@
 class Contact < ApplicationRecord
+  mount_uploader :avatar, AvatarUploader
   belongs_to :group
 
   validates :name, :email, :group_id, presence: true
