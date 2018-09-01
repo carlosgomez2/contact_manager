@@ -13,67 +13,70 @@
       </div>
     <% end %>
 
-        <div class="card-text">
-          <div class="row">
-            <div class="col-md-8">
+    <div class="card-text">
+      <div class="row">
+        <div class="col-md-8">
 
-              <div class="form-group">
-                <%= f.label :name %>
-                <%= f.text_field :name, class: "form-control" %>
+          <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :company %>
+            <%= f.text_field :company, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :email %>
+            <%= f.text_field :email, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :phone %>
+            <%= f.text_field :phone, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :address %>
+            <%= f.text_area :address, class: "form-control", rows: 3 %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :group %>
+            <% attr = { prompt: "Select Group"} %>
+            <% attr[:selected] = session[:selected_group_id].to_i if session[:selected_group_id] %>
+            <%= f.collection_select :group_id, Group.all, :id, :name, attr, class: "form-control" %>
+            <br>
+
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <a href="#" class="input-group-text btn btn-success">
+                  <i class="glyphicon glyphicon-ok"></i>
+                </a>
               </div>
-
-              <div class="form-group">
-                <%= f.label :company %>
-                <%= f.text_field :company, class: "form-control" %>
-              </div>
-
-              <div class="form-group">
-                <%= f.label :email %>
-                <%= f.text_field :email, class: "form-control" %>
-              </div>
-
-              <div class="form-group">
-                <%= f.label :phone %>
-                <%= f.text_field :phone, class: "form-control" %>
-              </div>
-
-              <div class="form-group">
-                <%= f.label :address %>
-                <%= f.text_area :address, class: "form-control", rows: 3 %>
-              </div>
-
-              <div class="form-group">
-                <%= f.label :group %>
-                <%= f.collection_select :group_id, Group.all, :id, :name, { prompt: "Select Group" }, class: "form-control" %>
-                <br>
-
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <a href="#" class="input-group-text btn btn-success">
-                      <i class="glyphicon glyphicon-ok"></i>
-                    </a>
-                  </div>
-                  <input type="text" name="new_group" id="new_group" class="form-control" placeholder="My new group">
-                </div>
-
-                <br>
-                <a href="#" id="add-group-btn" class="btn btn-outline-primary btn-block">Add New Group</a>
-              </div>
-
+              <input type="text" name="new_group" id="new_group" class="form-control" placeholder="My new group">
             </div>
-            <div class="col-md-4">
-              <div class="contact-avatar-container fileinput fileinput-new" data-provides="fileinput">
-                <%= image_tag @contact.avatar.present? ? @contact.avatar.url(:avatar) : @contact.gravatar, class: "img-fluid gravatar-img contact-avatar card-custom", data: { trigger: "fileinput" } %>
-                <br>
 
-                <div class="text-center">
-                  <span class="btn btn-secondary btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><%= f.file_field :avatar %></span>
-                  <a href="#" class="btn btn-secondary fileinput-exists" data-dismiss="fileinput">Remove</a>
-                </div>
-              </div>
+            <br>
+            <a href="#" id="add-group-btn" class="btn btn-outline-primary btn-block">Add New Group</a>
+          </div>
+
+        </div>
+        <div class="col-md-4">
+          <div class="contact-avatar-container fileinput fileinput-new" data-provides="fileinput">
+            <!-- needs image for empty -->
+            <%# image_tag @contact.avatar.present? ? @contact.avatar.url(:avatar) : @contact.gravatar, class: "img-fluid gravatar-img contact-avatar card-custom", data: { trigger: "fileinput" } %>
+            <br>
+
+            <div class="text-center">
+              <span class="btn btn-secondary btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><%= f.file_field :avatar %></span>
+              <a href="#" class="btn btn-secondary fileinput-exists" data-dismiss="fileinput">Remove</a>
             </div>
           </div>
         </div>
+      </div>
+    </div>
   </div>
 
   <div class="card-footer">
