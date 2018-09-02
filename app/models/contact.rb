@@ -11,4 +11,13 @@ class Contact < ApplicationRecord
     hash = Digest::MD5.hexdigest(email.downcase)
     "https://www.gravatar.com/avatar/#{hash}#{size}#{default}"
   end
+
+  def self.search(term)
+    term = "%#{term}%"
+    if term && !term.empty?
+      where('name LIKE :find OR company LIKE :find OR email LIKE :find OR address LIKE :find OR phone LIKE :find', find: term)
+    else
+      all
+    end
+  end
 end
