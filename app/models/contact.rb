@@ -20,4 +20,12 @@ class Contact < ApplicationRecord
       all
     end
   end
+
+  def self.by_group(group_id)
+    if group_id && !group_id.empty?
+      where(group_id: group_id)
+    else
+      all
+    end
+  end
 end
