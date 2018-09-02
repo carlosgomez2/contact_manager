@@ -1,18 +1,17 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow">
   <div class="container">
-    <h3><%= link_to "Contact Rails", root_path, class: "nav-link" %></h3>
-      <ul class="navbar-nav ml-md-auto">
-        <li class="search">
-          <%= render 'shared/search' %>
-        </li>
-        <li>
-          <%= link_to new_contact_path, class: "btn btn-light" do %>
-            <i class="glyphicon glyphicon-plus"></i>
-            Add Contact
-          <% end %>
-        </li>
-      </ul>
-      </div>
+    <%= link_to "Contact Rails", root_path, class: "nav-link nav-title" %>
+    <ul class="navbar-nav ml-md-auto">
+      <li class="search">
+        <%= render 'shared/search' %>
+      </li>
+      <li>
+        <%= link_to new_contact_path, class: "btn btn-light" do %>
+          <i class="glyphicon glyphicon-plus"></i>
+          Add Contact
+        <% end %>
+      </li>
+    </ul>
   </div>
 </nav>
