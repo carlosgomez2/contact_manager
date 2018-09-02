@@ -4,11 +4,7 @@
     <h3><%= link_to "Contact Rails", root_path, class: "nav-link" %></h3>
       <ul class="navbar-nav ml-md-auto">
         <li class="search">
-          <%= form_tag(contacts_path, class: "form-inline my-2 my-lg-0", role: "search", method: :get) do %>
-            <%= text_field_tag :term, params[:term], class: "form-control mr-sm-2", placeholder: "Search", autocomplete: "off" %>
-            <%# hidden_field_tag :group_id, params[:group_id] %>
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-          <% end %>
+          <%= render 'shared/search' %>
         </li>
         <li>
           <%= link_to new_contact_path, class: "btn btn-light" do %>
