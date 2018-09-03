@@ -16,4 +16,17 @@
 //= require jasny-bootstrap.min
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery-ui
 //= require_tree .
+
+document.addEventListener("turbolinks:load", function () {
+  $(function() {
+    $('#term').autocomplete({
+      source: "/contacts/autocomplete",
+      minLength: 3,
+      select: function(event, ui) {
+        $('#term').val(ui.item.value);
+      }
+    });
+  });
+});
