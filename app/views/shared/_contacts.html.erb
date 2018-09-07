@@ -10,6 +10,12 @@
     </div>
 
     <div class="col-md-9">
+      <p class="notice">
+        <%= notice %>
+      </p>
+      <p class="alert">
+        <%= alert %>
+      </p>
       <%= render "shared/messages" if !flash.empty? %>
       <%= yield %>
     </div>
