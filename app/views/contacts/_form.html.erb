@@ -72,8 +72,7 @@
         </div>
         <div class="col-md-4">
           <div class="contact-avatar-container fileinput fileinput-new" data-provides="fileinput">
-            <!-- needs image for empty -->
-            <%# image_tag @contact.avatar.present? ? @contact.avatar.url(:avatar) : @contact.gravatar, class: "img-fluid gravatar-img contact-avatar card-custom", data: { trigger: "fileinput" } %>
+            <%= image_tag contact_image(@contact), class: "img-fluid gravatar-img contact-avatar card-custom", data: { trigger: "fileinput" } %>
             <br>
 
             <div class="text-center">
