@@ -49,17 +49,24 @@
             <%= f.collection_select :group_id, Group.all, :id, :name, attr, class: "form-control" %>
             <br>
 
+            <!-- Group Input -->
             <div class="input-group mb-2 new_group" id="add-new-group">
               <div class="input-group-prepend">
                 <a id="save-group-btn" class="input-group-text btn btn-success">
                   <i class="glyphicon glyphicon-ok"></i>
                 </a>
               </div>
+
+
               <input type="text" name="new_group" id="new_group" id="new_group" class="form-control" placeholder="My new group">
+
+
             </div>
 
             <br>
             <a href="#" id="add-group-btn" class="btn btn-outline-primary btn-block">Add New Group</a>
+            <!-- End Group Input -->
+
           </div>
 
         </div>
