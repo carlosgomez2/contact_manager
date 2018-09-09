@@ -1,13 +1,11 @@
-<% if user_signed_in? %>
-  <ul class="nav navbar-light justify-content-end contact-tools" style="background-color: #e3f2fd;">
-    <li class="nav-item search">
-      <%= render 'shared/search' %>
-    </li>
-    <li class="nav-item">
-      <%= link_to new_contact_path, class: "btn btn-outline-primary" do %>
-        <i class="glyphicon glyphicon-plus"></i>
-        Add Contact
-      <% end %>
-    </li>
-  </ul>
-<% end %>
+<ul class="nav navbar-light justify-content-end contact-tools" style="background-color: #e3f2fd;">
+  <li class="nav-item search">
+    <%= render 'shared/search' %>
+  </li>
+  <li class="nav-item">
+    <%= link_to new_contact_path, class: "btn btn-outline-primary" do %>
+      <i class="glyphicon glyphicon-plus"></i>
+      Add Contact
+    <% end %>
+  </li>
+</ul>

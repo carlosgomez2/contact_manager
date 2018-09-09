@@ -1,15 +1,29 @@
-<% if @contacts.blank? %>
-  <div class="alert alert-warning">
-    <strong>Contact not found!</strong> Add some contacts please.
-  </div>
-<% end %>
+<!-- content -->
+<div class="container container-contacts">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card bg-white border-white border-0 card-custom badges">
+        <div class="list-group list-group-flush">
+          <%= render "badges" %>
+        </div>
+      </div>
+    </div>
 
-<%= render @contacts %>
+    <div class="col-md-9">
 
-<br>
+      <!-- TODO refactor -->
+      <% if notice || alert %>
+        <p class="notice">
+          <%= notice %>
+        </p>
+        <p class="alert">
+          <%= alert %>
+        </p>
+      <% end %>
 
-<div class="text-center">
-  <div class="pagination pagination-lg justify-content-center">
-    <%= paginate @contacts %>
+      <%= render "shared/contact_tools" if current_page?(contacts_path) %>
+      <%= render "shared/messages" if !flash.empty? %>
+      <%= render "contacts" %>
+    </div>
   </div>
 </div>
