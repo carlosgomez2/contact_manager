@@ -35,6 +35,12 @@
               <div class="row">
                 <div class="col-md-12">
                   <%= yield if !current_page?(root_path) %>
+                  <% if current_page?(root_path) %>
+                    <h1>Hello, welcome to Contact Rails</h1>
+                    <p>
+                      You need to Login or Sign Up to continue.
+                    </p>
+                  <% end %>
                 </div>
               </div>
             </div>
