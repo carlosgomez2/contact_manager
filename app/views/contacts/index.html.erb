@@ -21,7 +21,7 @@
         </p>
       <% end %>
 
-      <%= render "shared/contact_tools" if current_page?(contacts_path) %>
+      <%= render "shared/contact_tools" %>
       <%= render "shared/messages" if !flash.empty? %>
       <%= render "contacts" %>
     </div>

@@ -34,7 +34,7 @@
             <div class="container container-contacts">
               <div class="row">
                 <div class="col-md-12">
-                  <%= yield %>
+                  <%= yield if !current_page?(root_path) %>
                 </div>
               </div>
             </div>
