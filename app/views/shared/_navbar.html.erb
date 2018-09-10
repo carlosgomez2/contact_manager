@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow">
   <div class="container">
-    <%= link_to "Contact Rails", root_path, class: "nav-link nav-title" %>
+    <%= link_to "Contact Rails", nav_link(current_user), class: "nav-link nav-title" %>
     <% if user_signed_in? %>
       <ul class="navbar-nav">
         <li class="nav-item <%= active?(dashboard_path) %>">

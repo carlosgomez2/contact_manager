@@ -17,4 +17,12 @@ module ApplicationHelper
   def active?(path)
     "active" if current_page?(path)
   end
+
+  def nav_link(path)
+    if current_user.present?
+      dashboard_path
+    else
+      root_path
+    end
+  end
 end
