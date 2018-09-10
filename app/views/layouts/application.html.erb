@@ -20,27 +20,14 @@
             <!-- content -->
             <div class="container container-contacts">
               <div class="row">
-                <div class="col-md-3">
-                  <div class="card bg-white border-white border-0 card-custom badges">
-                    <div class="list-group list-group-flush">
-                      <%= render "contacts/badges" %>
-                    </div>
-                  </div>
-                </div>
                 <%= yield %>
               </div>
             </div>
           <% else %>
             <div class="container container-contacts">
               <div class="row">
-                <div class="col-md-6" style="margin: 0 auto;">
-                  <%= yield if !current_page?(root_path) %>
-                  <% if current_page?(root_path) %>
-                    <h1>Hello, welcome to Contact Rails</h1>
-                    <p>
-                      You need to Login or Sign Up to continue.
-                    </p>
-                  <% end %>
+                <div class="col-md-8" style="margin: 0 auto;">
+                  <%= yield %>
                 </div>
               </div>
             </div>

@@ -1,3 +1,12 @@
+<!-- content -->
+<div class="col-md-3">
+  <div class="card bg-white border-white border-0 card-custom badges">
+    <div class="list-group list-group-flush">
+      <%= render "contacts/badges" %>
+    </div>
+  </div>
+</div>
+
 <div class="col-md-9">
   <%= render "shared/contact_tools" %>
   <%= render "shared/messages" if !flash.empty? %>
