@@ -18,7 +18,7 @@ group_ids << Group.create(name: "Friend", user_id: users_ids[0]).id
 
 puts "#{group_ids.count} groups has been created"
 
-35.times do
+19.times do
   Contact.create(
     name: Faker::Name.name,
     company: "#{Faker::Company.name} #{Faker::Company.suffix}",
