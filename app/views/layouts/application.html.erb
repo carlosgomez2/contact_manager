@@ -16,6 +16,8 @@
         <div class="col-md-12">
           <%= render 'shared/navbar' %>
 
+          <%= render 'layouts/flash_messages' %>
+
           <% if user_signed_in? %>
             <!-- content -->
             <div class="container container-contacts">
