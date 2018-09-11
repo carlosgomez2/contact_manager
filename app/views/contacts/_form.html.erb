@@ -1,18 +1,6 @@
 <%= form_for(@contact, html: { multipart: true }) do |f| %>
   <div class="card-body">
-    <% if @contact.errors.any? %>
-      <div class="alert alert-danger">
-        <h4>Please correct this following errors:</h4>
-        <ul>
-          <% @contact.errors.full_messages.each do |error| %>
-            <li>
-              <%= error %>
-            </li>
-            <% end %>
-        </ul>
-      </div>
-    <% end %>
-
+    
     <div class="card-text">
       <div class="row">
         <div class="col-md-8">
@@ -20,26 +8,51 @@
           <div class="form-group">
             <%= f.label :name %>
             <%= f.text_field :name, class: "form-control #{has_error?(@contact, :name)}" %>
+            <% if #{has_error?(@contact, :name)} %>
+              <div class="invalid-feedback">
+                <%= get_error(@contact, :name) %>
+              </div>
+            <% end %>
           </div>
 
           <div class="form-group">
             <%= f.label :company %>
             <%= f.text_field :company, class: "form-control #{has_error?(@contact, :company)}" %>
+            <% if #{has_error?(@contact, :company)} %>
+              <div class="invalid-feedback">
+                <%= get_error(@contact, :company) %>
+              </div>
+            <% end %>
           </div>
 
           <div class="form-group">
             <%= f.label :email %>
             <%= f.text_field :email, class: "form-control #{has_error?(@contact, :email)}" %>
+            <% if #{has_error?(@contact, :email)} %>
+              <div class="invalid-feedback">
+                <%= get_error(@contact, :email) %>
+              </div>
+            <% end %>
           </div>
 
           <div class="form-group">
             <%= f.label :phone %>
             <%= f.text_field :phone, class: "form-control #{has_error?(@contact, :phone)}" %>
+            <% if #{has_error?(@contact, :phone)} %>
+              <div class="invalid-feedback">
+                <%= get_error(@contact, :phone) %>
+              </div>
+            <% end %>
           </div>
 
           <div class="form-group">
             <%= f.label :address %>
             <%= f.text_area :address, class: "form-control #{has_error?(@contact, :address)}", rows: 3 %>
+            <% if #{has_error?(@contact, :address)} %>
+              <div class="invalid-feedback">
+                <%= get_error(@contact, :address) %>
+              </div>
+            <% end %>
           </div>
 
           <div class="form-group">
@@ -47,6 +60,11 @@
             <% attr = { prompt: "Select Group"} %>
             <% attr[:selected] = session[:selected_group_id].to_i if session[:selected_group_id] %>
             <%= f.collection_select :group_id, current_user.groups, :id, :name, attr, class: "form-control #{has_error?(@contact, :group)}" %>
+            <% if #{has_error?(@contact, :group)} %>
+              <div class="invalid-feedback">
+                <%= get_error(@contact, :group) %>
+              </div>
+            <% end %>
             <br>
 
             <!-- Group Input -->

@@ -29,4 +29,8 @@ module ApplicationHelper
   def has_error?(resource, attribute)
     'is-invalid' if resource.errors.messages[attribute].present?
   end
+
+  def get_error(resource, attribute)
+    resource.errors.messages[attribute].join(', ')
+  end
 end
