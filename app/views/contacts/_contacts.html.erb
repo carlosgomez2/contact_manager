@@ -4,12 +4,14 @@
   </div>
 <% end %>
 
-<%= render @contacts %>
+<div id="contacts">
+  <%= render @contacts %>
+</div>
 
 <br>
 
 <div class="text-center">
-  <div class="pagination pagination-lg justify-content-center">
-    <%= paginate @contacts %>
+  <div class="pagination pagination-lg justify-content-center" id="paginator">
+    <%= paginate @contacts, remote: true %>
   </div>
 </div>
