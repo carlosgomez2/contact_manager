@@ -24,9 +24,12 @@ class ContactsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    authorize @contact
+  end
 
   def update
+    authorize @contact
     if @contact.update(contact_params)
       flash[:success] = 'Contact has been updated successfully!'
       redirect_to contacts_path(previous_query_string)
