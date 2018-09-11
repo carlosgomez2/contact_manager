@@ -2,21 +2,23 @@ Contact.destroy_all
 Group.destroy_all
 User.destroy_all
 
-users_ids = []
-users_ids << User.create(name: "carlos gomez", email: "carlos@gmail.com", password: "password", password_confirmation: "password").id
-users_ids << User.create(name: "jonh doe", email: "jonhjonhz@gmail.com", password: "password", password_confirmation: "password").id
+carlos = User.create(name: 'carlos gomez', email: 'carlos@gmail.com', password: 'password', password_confirmation: 'password')
+jonh = User.create(name: 'jonh doe', email: 'jonhjonhz@gmail.com', password: 'password', password_confirmation: 'password')
 
-puts "#{users_ids.count} users has been created"
+puts '2 users has been created'
 
-group_ids = []
+jonh_group_ids = []
+carlos_group_ids = []
 
-group_ids << Group.create(name: "Client", user_id: users_ids[1]).id
-group_ids << Group.create(name: "Company", user_id: users_ids[1]).id
-group_ids << Group.create(name: "Family", user_id: users_ids[0]).id
-group_ids << Group.create(name: "Friend", user_id: users_ids[0]).id
+carlos_group_ids << Group.create(name: 'Client', user_id: carlos.id).id
+carlos_group_ids << Group.create(name: 'Company', user_id: carlos.id).id
+carlos_group_ids << Group.create(name: 'Employee', user_id: carlos.id).id
 
+jonh_group_ids << Group.create(name: 'Family', user_id: jonh.id).id
+jonh_group_ids << Group.create(name: 'Friend', user_id: jonh.id).id
+jonh_group_ids << Group.create(name: 'School', user_id: jonh.id).id
 
-puts "#{group_ids.count} groups has been created"
+puts "#{jonh_group_ids.count + carlos_group_ids.count} groups has been created"
 
 19.times do
   Contact.create(
@@ -25,8 +27,20 @@ puts "#{group_ids.count} groups has been created"
     email: Faker::Internet.email,
     phone: Faker::PhoneNumber.cell_phone,
     address: Faker::Address.street_address,
-    group_id: group_ids[SecureRandom.random_number(0..(group_ids.count - 1))],
-    user_id: users_ids[SecureRandom.random_number(0..(users_ids.count - 1))]
+    group_id: carlos_group_ids[SecureRandom.random_number(0..(carlos_group_ids.count - 1))],
+    user_id: carlos.id
+  )
+end
+
+19.times do
+  Contact.create(
+    name: Faker::Name.name,
+    company: "#{Faker::Company.name} #{Faker::Company.suffix}",
+    email: Faker::Internet.email,
+    phone: Faker::PhoneNumber.cell_phone,
+    address: Faker::Address.street_address,
+    group_id: jonh_group_ids[SecureRandom.random_number(0..(jonh_group_ids.count - 1))],
+    user_id: jonh.id
   )
 end
 
