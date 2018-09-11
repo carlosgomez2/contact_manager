@@ -25,4 +25,8 @@ module ApplicationHelper
       root_path
     end
   end
+
+  def has_error?(resource, attribute)
+    'is-invalid' if resource.errors.messages[attribute].present?
+  end
 end

@@ -19,34 +19,34 @@
 
           <div class="form-group">
             <%= f.label :name %>
-            <%= f.text_field :name, class: "form-control" %>
+            <%= f.text_field :name, class: "form-control #{has_error?(@contact, :name)}" %>
           </div>
 
           <div class="form-group">
             <%= f.label :company %>
-            <%= f.text_field :company, class: "form-control" %>
+            <%= f.text_field :company, class: "form-control #{has_error?(@contact, :company)}" %>
           </div>
 
           <div class="form-group">
             <%= f.label :email %>
-            <%= f.text_field :email, class: "form-control" %>
+            <%= f.text_field :email, class: "form-control #{has_error?(@contact, :email)}" %>
           </div>
 
           <div class="form-group">
             <%= f.label :phone %>
-            <%= f.text_field :phone, class: "form-control" %>
+            <%= f.text_field :phone, class: "form-control #{has_error?(@contact, :phone)}" %>
           </div>
 
           <div class="form-group">
             <%= f.label :address %>
-            <%= f.text_area :address, class: "form-control", rows: 3 %>
+            <%= f.text_area :address, class: "form-control #{has_error?(@contact, :address)}", rows: 3 %>
           </div>
 
           <div class="form-group">
             <%= f.label :group %>
             <% attr = { prompt: "Select Group"} %>
             <% attr[:selected] = session[:selected_group_id].to_i if session[:selected_group_id] %>
-            <%= f.collection_select :group_id, current_user.groups, :id, :name, attr, class: "form-control" %>
+            <%= f.collection_select :group_id, current_user.groups, :id, :name, attr, class: "form-control #{has_error?(@contact, :group)}" %>
             <br>
 
             <!-- Group Input -->
