@@ -35,4 +35,13 @@ document.addEventListener("turbolinks:load", function () {
       }
     });
   });
+
+  // After ajaxify contact pagination needs this function to work back button and url page reference. example, ?page=2
+  $(document).on('click', '.pagination a[data-remote=true], a.list-group-item', function () {
+    history.pushState({}, '', $(this).attr('href'));
+  });
+
+  $(window).on('popstate', function() {
+    $.get(document.location.href);
+  });
 });
