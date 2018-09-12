@@ -1,2 +1,4 @@
 $('#contacts').html('<%= escape_javascript render(@contacts) %>');
 $('#paginator').html('<%= escape_javascript(paginate(@contacts, remote: true)) %>');
+$('#badges').html('<%= escape_javascript render("contacts/badges") %>');
+<!-- $('#group_id').val('<%# params[:group_id] %>'); -->
