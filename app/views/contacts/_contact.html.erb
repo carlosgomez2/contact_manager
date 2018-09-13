@@ -18,8 +18,8 @@
       </div>
     </div>
     <div class="col contact-actions">
-      <%= link_to '', edit_contact_path(contact), class: "text-secondary glyphicon glyphicon-pencil contact-action-icon", title: "Edit" %>
-      <%= link_to '', contact_path(contact), method: :delete, class: "text-danger glyphicon glyphicon-trash contact-action-icon", title: "Delete", data: { confirm: "Are you sure?" } %>
+      <%= link_to '', edit_contact_path(contact), class: "text-secondary glyphicon glyphicon-pencil contact-action-icon", title: "Edit", data: {toggle: "modal", target: "#form-modal"}, remote: true %>
+      <%= link_to '', contact_path(contact), method: :delete, class: "text-danger glyphicon glyphicon-trash contact-action-icon", title: "Delete", data: { confirm: "Are you sure?" }, remote: true %>
     </div>
   </div>
 </div>

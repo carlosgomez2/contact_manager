@@ -37,19 +37,29 @@ class ContactsController < ApplicationController
 
   def update
     authorize @contact
-    if @contact.update(contact_params)
-      flash[:success] = 'Contact has been updated successfully.'
-      redirect_to contacts_path(previous_query_string)
-    else
-      flash[:error] = 'Contact failed to be updated.'
-      render 'edit'
+    respond_to do |format|
+      if @contact.update(contact_params)
+        format.html do
+          flash[:success] = 'Contact has been updated successfully.'
+          redirect_to contacts_path(previous_query_string)
+        end
+      else
+        format.html do
+          flash[:error] = 'Contact failed to be updated.'
+          render 'edit'
+        end
+      end
     end
   end
 
   def destroy
     @contact.destroy
-    flash[:success] = 'Contact has been deleted.'
-    redirect_to contacts_path
+    respond_to do |format|
+      format.html do
+        flash[:success] = 'Contact has been deleted.'
+        redirect_to contacts_path(previous_query_string)
+      end
+    end
   end
 
   private
