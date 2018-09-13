@@ -16,12 +16,18 @@ class ContactsController < ApplicationController
 
   def create
     @contact = current_user.contacts.build(contact_params)
-    if @contact.save
-      flash[:success] = 'Contact was successfully created.'
-      redirect_to contacts_path(previous_query_string)
-    else
-      flash[:error] = 'Contact failed to be created.'
-      render 'new'
+    respond_to do |format|
+      if @contact.save
+        format.html do
+          flash[:success] = 'Contact was successfully created.'
+          redirect_to contacts_path(previous_query_string)
+        end
+      else
+        format.html do
+          flash[:error] = 'Contact failed to be created.'
+          render 'new'
+        end
+      end
     end
   end
 
