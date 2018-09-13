@@ -3,7 +3,7 @@
     <%= render 'shared/search' %>
   </li>
   <li class="nav-item">
-    <%= link_to new_contact_path, class: "btn btn-outline-primary" do %>
+    <%= link_to new_contact_path, class: "btn btn-outline-primary", data: {toggle: "modal", target: "#form-modal"}, remote: true do %>
       <i class="glyphicon glyphicon-plus"></i>
       Add Contact
     <% end %>
