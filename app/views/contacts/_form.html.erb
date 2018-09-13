@@ -1,4 +1,4 @@
-<%= form_for(@contact, html: { multipart: true }) do |f| %>
+<%= form_for(@contact, html: { multipart: true }, remote: true) do |f| %>
   <div class="card-body">
     
     <div class="card-text">
@@ -103,8 +103,11 @@
     </div>
   </div>
 
-  <div class="card-footer">
-    <%= f.submit @contact.new_record? ? "Save" : "Update", class: "btn btn-primary" %>
-    <%= link_to "Cancel", root_path, class: "btn btn-outline-primary" %>
-  </div>
+  <% unless local_assigns[:hide_buttons] %>
+    <div class="card-footer">
+      <%= f.submit @contact.new_record? ? "Save" : "Update", class: "btn btn-primary" %>
+      <%= link_to "Cancel", root_path, class: "btn btn-outline-primary" %>
+    </div>
+  <% end %>
+
 <% end %>
