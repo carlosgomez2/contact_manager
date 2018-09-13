@@ -10,8 +10,10 @@ Beautiful contact manager app has been made on Ruby on Rails and ajax.
 
 ## Screenshots
 
-![index](contact_rails_contacts.png)
+![dashboard](dashboard.png)
 
-![edit](contact_rails_edit_contact.png)
+![all contacts](all_contacts.png)
 
-![new](contact_rails_new_contact.png)
+![new contact](new_contact.png)
+
+![search results](search_result.png)
