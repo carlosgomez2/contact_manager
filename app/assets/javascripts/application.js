@@ -24,7 +24,7 @@
 //= require toastr
 //= require_tree .
 
-document.addEventListener("turbolinks:load", function () {
+document.addEventListener("turbolinks:load", function() {
   $(function() {
     $('#term').autocomplete({
       source: "/contacts/autocomplete",
@@ -33,6 +33,10 @@ document.addEventListener("turbolinks:load", function () {
         $('#term').val(ui.item.value);
         $(this).closest('form').submit();
       }
+    });
+
+    $('#form-modal-save-btn').click(function () {
+      $('#new_contact').submit();
     });
   });
 
