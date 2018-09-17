@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 20180910215914) do
 
-  create_table "contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "contacts", force: :cascade do |t|
     t.string   "name"
     t.string   "company"
     t.string   "email"
@@ -27,13 +30,13 @@ ActiveRecord::Schema.define(version: 20180910215914) do
     t.index ["user_id"], name: "index_contacts_on_user_id", using: :btree
   end
 
-  create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "groups", force: :cascade do |t|
     t.string  "name"
     t.integer "user_id"
     t.index ["user_id"], name: "index_groups_on_user_id", using: :btree
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "name",                   default: "", null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
