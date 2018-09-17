@@ -28,6 +28,6 @@ module ContactManager
     config.autoload_paths += %W(#{config.root}/lib)
 
     # precompile assets
-    config.assets.initialize_on_precompile = false
+    # config.assets.initialize_on_precompile = false
   end
 end
